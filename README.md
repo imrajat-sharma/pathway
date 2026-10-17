@@ -102,11 +102,11 @@ Then open `http://localhost:4173`.
 
 ## Routes
 
-| Route | View |
-| --- | --- |
-| `/` | Landing page |
-| `/dashboard` | Discover dashboard and filters |
-| `/saved` | Saved roles and application status |
+| Route                | View                                    |
+| -------------------- | --------------------------------------- |
+| `/`                  | Landing page                            |
+| `/dashboard`         | Discover dashboard and filters          |
+| `/saved`             | Saved roles and application status      |
 | `/opportunities/:id` | Opportunity detail and application flow |
 
 The landing page includes the first three featured roles. Click a card to open its detail view, use **Save** to add it to the shortlist, or choose **Apply now** to submit an application.
@@ -132,15 +132,3 @@ The landing page includes the first three featured roles. Click a card to open i
 ## Notes for backend integration
 
 The UI currently keeps fixture data in memory and saved/application data in `localStorage` so it can be evaluated offline. To connect it to a backend, replace the `jobs` source in `src/data.ts` with a typed fetch layer that uses `import.meta.env.VITE_API_URL`, and move the saved/application handlers in `App.tsx` to the authenticated API mutations. The view contracts and domain types are already isolated to make that change focused.
-
-## Evaluation checklist
-
-- [x] Three interconnected views plus a landing page
-- [x] Responsive desktop and mobile layouts
-- [x] Interactive search and multi-dimensional filtering
-- [x] Save/remove roles with persistent state
-- [x] Detail view with apply modal and application state
-- [x] Modular, typed React components
-- [x] Accessibility labels and keyboard-visible focus states
-- [x] README, runtime pin, lockfile, Dockerfile, and offline test command
-# pathway
